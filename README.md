@@ -75,6 +75,28 @@ module.exports = {
 };
 ```
 
+With webpack 2:
+
+```javascript
+// ./webpack.config.js
+
+module.exports = {
+    ...
+    module: {
+        rules: [
+            {
+                test: "some-module", // for example /masonry/
+                loader: 'imports-loader',
+                query: {
+                    define: false,
+                    this: '(function () { ... }).call(window)'
+                }
+            }
+        ]
+    }
+};
+```
+
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
 
 <h2 align="center">Typical Use Cases</h2>
